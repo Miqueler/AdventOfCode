@@ -1,2 +1,2 @@
 x = "hello"
-print(1001 // 100)
+print(x[1:])
