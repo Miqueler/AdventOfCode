@@ -8,7 +8,7 @@ start, end = int(), int()
 current = 0
 total = 0
 
-for i in range(len(id_list)):
+for i in range(len(id_list)): #Loops over the different ranges
     #Get the range of values
     interval = id_list[i]
     start = int(interval.split("-")[0])
@@ -17,12 +17,12 @@ for i in range(len(id_list)):
 
     
 
-    while end >= current:
+    while end >= current: #loop over all numbers in the range
         flag = 0
 
         num = str(current)
         #Loop over all the possible groups of "sub numbers" (ex: 1111 -> 1-1-1-1, 11-11)
-        for j in range(1, (len(num) // 2) + 1):
+        for j in range(1, (len(num) // 2) + 1): #Try for every possible group of convs
             if len(num) % j != 0: 
                 current += 1
                 continue
