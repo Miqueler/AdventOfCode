@@ -28,23 +28,18 @@ for i in range(len(id_list)): #Loops over the different ranges
                 continue
 
             for i in range((len(num) // 2)):
+                print(f"first: {num[i]} second: {num[i + j]}")
                 if num[i] != num[i + j]:
                     flag = 1
                     break
 
             if flag == 0: 
                 total += current
+            flag = 0
             
             current += 1
             continue
 
-
-
-        if num[:(len(num) // 2)] == num[(len(num)//2):]:
-            total += current
-        
-        print(f"{num[:(len(num) // 2)]} // {num[(len(num) // 2):]}, current {current}")
-        print(len(num))
         current += 1
 
 print(total)
