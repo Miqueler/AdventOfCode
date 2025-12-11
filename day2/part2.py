@@ -28,7 +28,7 @@ for i in range(len(id_list)): #Loops over the different ranges
                 continue
 
             for i in range((len(num) // 2)):
-                if num[i * j:(i + 1) * j] != num[(i + 1) * j:(i + 2) * j]:
+                if num[i] != num[i + j]:
                     flag = 1
                     break
 
