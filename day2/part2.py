@@ -22,24 +22,21 @@ for i in range(len(id_list)): #Loops over the different ranges
 
         num = str(current)
         #Loop over all the possible groups of "sub numbers" (ex: 1111 -> 1-1-1-1, 11-11)
+
         for j in range(1, (len(num) // 2) + 1): #Try for every possible group of convs
             if len(num) % j != 0: 
                 current += 1
                 continue
-
-            for i in range((len(num) // 2)):
+            #Try current conv
+            for i in range((len(num) // j)):
                 print(f"first: {num[i]} second: {num[i + j]}")
-                if num[i] != num[i + j]:
+                if num[(i * j):((i+1)*j)] != num[((i+1)*j):((i+2)*j)]:
                     flag = 1
                     break
 
             if flag == 0: 
                 total += current
-            flag = 0
-            
-            current += 1
-            continue
-
+        print(total)
         current += 1
 
 print(total)
