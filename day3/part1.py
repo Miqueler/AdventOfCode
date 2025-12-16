@@ -4,18 +4,18 @@ with open("day3/input.txt") as file:
 
 total = 0
 for i in range(len(input_list)):
-    num1 = 0
-    num2 = 0
+    max = 0
+    check = 0
     current = input_list[i]
-    for j in range(len(current)):
-        if int(current[j]) > num1:
-            if num1 > num2: 
-                num2 = num1
-            num1 = int(current[j])
-            
-        elif int(current[j]) > num2:
-            num2 = int(current[j])
-    print(10*num1 + num2)
-    total += 10*num1 + num2
+    for j in range(len(current) - 1): #problem is that if a number is bigger but it's after the number in 2 you get n impossible number due to not being able to reorder the string
+        if max // 10 < int(current[j]):
+            max = int(current[i]) * 10
+            for k in range(len(current) - 1 - j):
+                if int(current[j + 1 + k]) > check:
+                    check = int(current[j + 1 + k])
+    
+
+
+    total += max + check
 
 print(total)
